@@ -16,14 +16,14 @@
 // used for binary releases.
 #ifdef PION_FULL
 #define PION_USE_LOG4CXX
-#define PION_HAVE_SSL 10
-#define PION_HAVE_JSON
-#define PION_HAVE_PYTHON
+#define PION_HAVE_SSL 11
+//#define PION_HAVE_JSON
+//#define PION_HAVE_PYTHON
 #endif
 // Usually you don't need (and want) to debug openssl, but link to openssl in
 // the 'Release' configuration (though we leave it on for historical reasons)
 #if defined _DEBUG
-    #define PION_USE_SSL_DEBUG
+    //#define PION_USE_SSL_DEBUG
 #endif
 
 /* Define to the version number of pion. */
