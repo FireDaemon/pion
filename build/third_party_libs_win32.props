@@ -12,9 +12,9 @@
     <ICU_INC>$(LIB_ROOT)\icu4c-49_1_2\icu\include</ICU_INC>
     <ICU_LIB>$(LIB_ROOT)\icu4c-49_1_2\icu\lib</ICU_LIB>
     <ICU_BIN>$(LIB_ROOT)\icu4c-49_1_2\icu\bin</ICU_BIN>
-    <LIBXML_INC>E:\projects\firedaemon\3rd-party\libxml2-2.9.3\include\libxml2</LIBXML_INC>
-    <LIBXML_LIB>E:\projects\firedaemon\3rd-party\libxml2-2.9.3\lib</LIBXML_LIB>
-    <LIBXML_BIN>E:\projects\firedaemon\3rd-party\libxml2-2.9.3\bin</LIBXML_BIN>
+    <LIBXML_INC>$(LIB_ROOT)\libxml2-2.9.0\include</LIBXML_INC>
+    <LIBXML_LIB>$(LIB_ROOT)\libxml2-2.9.0\lib</LIBXML_LIB>
+    <LIBXML_BIN>$(LIB_ROOT)\libxml2-2.9.0\bin</LIBXML_BIN>
     <LOG4CPLUS_INC>$(LIB_ROOT)\log4cplus-1.0.4.1\include</LOG4CPLUS_INC>
     <LOG4CPLUS_LIB>$(LIB_ROOT)\log4cplus-1.0.4.1\bin</LOG4CPLUS_LIB>
     <LOG4CXX_INC>E:\projects\firedaemon\3rd-party\apache-log4cxx-0.10.0\src\main\include</LOG4CXX_INC>
