@@ -18,7 +18,7 @@
     <LOG4CPLUS_INC>$(LIB_ROOT)\log4cplus-1.0.4.1\include</LOG4CPLUS_INC>
     <LOG4CPLUS_LIB>$(LIB_ROOT)\log4cplus-1.0.4.1\bin</LOG4CPLUS_LIB>
     <LOG4CXX_INC>E:\projects\firedaemon\3rd-party\apache-log4cxx-0.10.0\src\main\include</LOG4CXX_INC>
-    <LOG4CXX_LIB>E:\projects\firedaemon\3rd-party\apache-log4cxx-0.10.0\lib</LOG4CXX_LIB>
+    <LOG4CXX_LIB>E:\projects\firedaemon\3rd-party\apache-log4cxx-0.10.0\x86\lib</LOG4CXX_LIB>
     <OPENSSL_INC>E:\projects\firedaemon\3rd-party\openssl-1.1\x86\include</OPENSSL_INC>
     <OPENSSL_LIB>E:\projects\firedaemon\3rd-party\openssl-1.1\x86\lib</OPENSSL_LIB>
     <PYTHON_INC>$(LIB_ROOT)\Python26\include</PYTHON_INC>

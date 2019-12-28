@@ -2,8 +2,8 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
     <LIB_ROOT>C:\vc12</LIB_ROOT>
-    <BOOST_INC>$(LIB_ROOT)\boost-1.56.0</BOOST_INC>
-    <BOOST_LIB>$(LIB_ROOT)\boost-1.56.0\lib</BOOST_LIB>
+    <BOOST_INC>E:\projects\firedaemon\3rd-party\boost_1_71_0</BOOST_INC>
+    <BOOST_LIB>E:\projects\firedaemon\3rd-party\boost_1_71_0\stage\x64\lib</BOOST_LIB>
     <BZIP2_INC>$(LIB_ROOT)\bzip2-1.0.6\include</BZIP2_INC>
     <BZIP2_LIB>$(LIB_ROOT)\bzip2-1.0.6\lib64</BZIP2_LIB>
     <ICONV_INC>$(LIB_ROOT)\iconv-1.9.2\include</ICONV_INC>
@@ -17,10 +17,10 @@
     <LIBXML_BIN>$(LIB_ROOT)\libxml2-2.9.0\bin\x64</LIBXML_BIN>
     <LOG4CPLUS_INC>$(LIB_ROOT)\log4cplus-1.1.3-rc2\include</LOG4CPLUS_INC>
     <LOG4CPLUS_LIB>$(LIB_ROOT)\log4cplus-1.1.3-rc2\bin\x64</LOG4CPLUS_LIB>
-    <LOG4CXX_INC>$(LIB_ROOT)\apache\apache-log4cxx-0.10.0\src\main\include</LOG4CXX_INC>
-    <LOG4CXX_LIB>$(LIB_ROOT)\apache\apache-log4cxx-0.10.0\bin\x64</LOG4CXX_LIB>
-    <OPENSSL_INC>$(LIB_ROOT)\openssl-1.0.1j\inc64</OPENSSL_INC>
-    <OPENSSL_LIB>$(LIB_ROOT)\openssl-1.0.1j\bin\x64</OPENSSL_LIB>
+    <LOG4CXX_INC>E:\projects\firedaemon\3rd-party\apache-log4cxx-0.10.0\src\main\include</LOG4CXX_INC>
+    <LOG4CXX_LIB>E:\projects\firedaemon\3rd-party\apache-log4cxx-0.10.0\x64\lib</LOG4CXX_LIB>
+    <OPENSSL_INC>E:\projects\firedaemon\3rd-party\openssl-1.1\x64\include</OPENSSL_INC>
+    <OPENSSL_LIB>E:\projects\firedaemon\3rd-party\openssl-1.1\x64\lib</OPENSSL_LIB>
     <PYTHON_INC>$(LIB_ROOT)\Python26\include</PYTHON_INC>
     <PYTHON_LIB>$(LIB_ROOT)\Python26\libs\x64</PYTHON_LIB>
     <YAJL_INC>$(LIB_ROOT)\yajl-2.0.5\include</YAJL_INC>
