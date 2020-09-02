@@ -201,12 +201,6 @@ protected:
      */
     server(scheduler& sched, const boost::asio::ip::tcp::endpoint& endpoint);
 
-    virtual void handle_ssl_handshake_error(const tcp::connection_ptr& tcp_conn,
-                                            const boost::system::error_code& handshake_error)
-    {
-        tcp_conn->set_lifecycle(connection::LIFECYCLE_CLOSE); // make sure it will get closed
-        tcp_conn->finish();
-    }
 #ifdef BOOST_ASIO_HAS_MOVE
     /**
      * protected constructor so that only derived objects may be created
@@ -223,6 +217,19 @@ protected:
      */
     server(scheduler& sched, endpoints_t endpoints);
 #endif
+
+    /**
+     * handles new connections following an SSL handshake (checks for errors)
+     *
+     * @param tcp_conn the new TCP connection (if no error occurred)
+     * @param handshake_error true if an error occurred during the SSL handshake
+     */
+    virtual void handle_ssl_handshake_error(const tcp::connection_ptr& tcp_conn,
+                                            const boost::system::error_code& handshake_error)
+    {
+        tcp_conn->set_lifecycle(connection::LIFECYCLE_CLOSE); // make sure it will get closed
+        tcp_conn->finish();
+    }
 
     /**
      * handles a new TCP connection; derived classes SHOULD override this
@@ -266,15 +273,6 @@ private:
     void handle_accept(const tcp::connection_ptr& tcp_conn,
                       const boost::system::error_code& accept_error);
 
-    /**
-     * handles new connections following an SSL handshake (checks for errors)
-     *
-     * @param tcp_conn the new TCP connection (if no error occurred)
-     * @param handshake_error true if an error occurred during the SSL handshake
-     */
-    void handle_ssl_handshake(const tcp::connection_ptr& tcp_conn,
-                            const boost::system::error_code& handshake_error);
-    
     /// This will be called by connection::finish() after a server has
     /// finished handling a connection.  If the keep_alive flag is true,
     /// it will call handle_connection(); otherwise, it will close the
