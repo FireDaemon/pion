@@ -180,7 +180,7 @@ void server::start(void)
                 // allow the acceptor to reuse the address (i.e. SO_REUSEADDR)
                 // ...except when running not on Windows - see http://msdn.microsoft.com/en-us/library/ms740621%28VS.85%29.aspx
 #ifndef PION_WIN32
-                acceptor_t::reuse_address(true));
+                acceptor_t::reuse_address(true);
 #endif
                 acceptor.bind(endpoint);
                 if (endpoint.port() == 0) {
@@ -346,7 +346,8 @@ void server::handle_ssl_handshake(const tcp::connection_ptr& tcp_conn,
         // an error occured while trying to establish the SSL connection
         PION_LOG_WARN(m_logger, "SSL handshake failed on endpoint " << tcp_conn->get_local_endpoint()
                       << " (" << handshake_error.message() << ')');
-        finish_connection(tcp_conn);
+        tcp_conn->reset_ssl_flag();
+        handle_ssl_handshake_error(tcp_conn, handshake_error);
     } else {
         // handle the new connection
         PION_LOG_DEBUG(m_logger, "SSL handshake succeeded on endpoint " << tcp_conn->get_local_endpoint());
