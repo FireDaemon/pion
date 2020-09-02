@@ -13,6 +13,7 @@
 #include <cstring>
 #include <pion/algorithm.hpp>
 #include <boost/assert.hpp>
+#include <boost/config.hpp>
 
 // macro to shift bitmask by a single bit
 #define SHIFT_BITMASK(ptr, mask)    if (mask & 0x01) { mask = 0x80; ++ptr; } else mask >>= 1;
@@ -212,10 +213,13 @@ std::string algorithm::url_encode(const std::string& str)
                 result += str[pos];
                 break;
             }
-            // else pass through to next case
-        case ' ':   
+            BOOST_FALLTHROUGH;
+        case ' ':
+            BOOST_FALLTHROUGH;
         case '$': case '&': case '+': case ',': case '/': case ':':
+            BOOST_FALLTHROUGH;
         case ';': case '=': case '?': case '@': case '"': case '<':
+            BOOST_FALLTHROUGH;
         case '>': case '#': case '%': case '{': case '}': case '|':
         case '\\': case '^': case '~': case '[': case ']': case '`':
             // the character needs to be encoded

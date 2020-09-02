@@ -18,6 +18,7 @@
     #include <sys/stat.h>
 #endif
 
+#include <boost/config.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/date_time.hpp>
 
@@ -63,8 +64,11 @@ BOOL WINAPI console_ctrl_handler(DWORD ctrl_type)
 {
     switch(ctrl_type) {
         case CTRL_C_EVENT:
+            BOOST_FALLTHROUGH;
         case CTRL_BREAK_EVENT:
+            BOOST_FALLTHROUGH;
         case CTRL_CLOSE_EVENT:
+            BOOST_FALLTHROUGH;
         case CTRL_SHUTDOWN_EVENT:
             process::shutdown();
             return TRUE;
