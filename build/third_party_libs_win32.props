@@ -2,8 +2,8 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
     <LIB_ROOT>C:\vc12</LIB_ROOT>
-    <BOOST_INC>E:\projects\firedaemon\3rd-party\boost_1_71_0</BOOST_INC>
-    <BOOST_LIB>E:\projects\firedaemon\3rd-party\boost_1_71_0\stage\x86\lib</BOOST_LIB>
+    <BOOST_INC>E:\projects\firedaemon\3rd-party\boost_1_74_0_b1</BOOST_INC>
+    <BOOST_LIB>E:\projects\firedaemon\3rd-party\boost_1_74_0_b1\stage\x86\lib</BOOST_LIB>
     <BZIP2_INC>$(LIB_ROOT)\bzip2-1.0.6\include</BZIP2_INC>
     <BZIP2_LIB>$(LIB_ROOT)\bzip2-1.0.6\lib</BZIP2_LIB>
     <ICONV_INC>$(LIB_ROOT)\iconv-1.9.2\include</ICONV_INC>
