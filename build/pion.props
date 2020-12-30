@@ -5,8 +5,8 @@
   </ImportGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir>$(SolutionDir)bin\$(Configuration)_$(PlatformName)\</OutDir>
-    <IntDir>$(SolutionDir)IntermediateOutput\$(ProjectName)\$(Configuration)_$(PlatformName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(WinApiSubfolder)$(Configuration)_$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)IntermediateOutput\$(ProjectName)\$(WinApiSubfolder)$(Configuration)_$(PlatformName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>

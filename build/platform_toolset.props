@@ -5,6 +5,9 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <ItemDefinitionGroup />
-  <PropertyGroup />
+  <PropertyGroup> 
+    <VCToolsVersion>14.27.29110</VCToolsVersion> 
+    <VCToolsRedistVersion>14.27.29016</VCToolsRedistVersion> 
+  </PropertyGroup>      
   <ItemGroup />
 </Project>
