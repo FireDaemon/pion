@@ -36,6 +36,7 @@ Debug_*/
 *.ipch
 *.sdf
 *.opensdf
+.vs/
 _ReSharper.*/
 tests/test_log.xml
 tests/test_results.xml
