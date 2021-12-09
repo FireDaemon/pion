@@ -326,6 +326,53 @@ void server::listen(void)
     }
 }
 
+void server::listen_on(boost::asio::ip::tcp::endpoint ep)
+{
+    // assert that we passed the acceptor's endpoint on construction
+    if (ep == boost::asio::ip::tcp::endpoint()) {
+        PION_LOG_FATAL(m_logger, "No endpoint specified");
+        return;
+    }
+
+    // lock mutex for thread safety
+    boost::mutex::scoped_lock server_lock(m_mutex);
+
+    if (m_is_listening) {
+        // prune connections that finished uncleanly
+        prune_connections();
+
+        acceptor_t* acceptor = NULL;
+        for (size_t i = 0, n = boost::size(m_tcp_acceptors); i < n; ++i) {
+            if (m_endpoints[i] == ep) {
+                acceptor = &m_tcp_acceptors[i];
+                break;
+            }
+        }
+        if (!acceptor) {
+            PION_LOG_FATAL(m_logger, "Wrong endpoint specified");
+            return;
+        }
+
+        {
+            // create a new TCP connection object
+            tcp::connection_ptr new_connection(connection::create(get_executor(),
+                m_ssl_context, m_ssl_flag,
+                boost::bind(&server::finish_connection,
+                    this, _1),
+                acceptor->local_endpoint()));
+
+            // keep track of the object in the server's connection pool
+            m_conn_pool.insert(new_connection);
+
+            // use the object to accept a new connection
+            new_connection->async_accept(*acceptor,
+                boost::bind(&server::handle_accept,
+                    this, new_connection,
+                    boost::asio::placeholders::error));
+        }
+    }
+}
+
 void server::handle_accept(const tcp::connection_ptr& tcp_conn,
                              const boost::system::error_code& accept_error)
 {
@@ -333,7 +380,7 @@ void server::handle_accept(const tcp::connection_ptr& tcp_conn,
         // an error occured while trying to a accept a new connection
         // this happens when the server is being shut down
         if (m_is_listening) {
-            listen();   // schedule acceptance of another connection
+            listen_on(tcp_conn->get_local_endpoint());   // schedule acceptance of another connection
             PION_LOG_WARN(m_logger, "Accept error on endpoint " << tcp_conn->get_local_endpoint() << ": " << accept_error.message());
         }
         finish_connection(tcp_conn);
@@ -344,7 +391,7 @@ void server::handle_accept(const tcp::connection_ptr& tcp_conn,
 
         // schedule the acceptance of another new connection
         // (this returns immediately since it schedules it as an event)
-        if (m_is_listening) listen();
+        if (m_is_listening) listen_on(tcp_conn->get_local_endpoint());
         
         // handle the new connection
 #ifdef PION_HAVE_SSL
