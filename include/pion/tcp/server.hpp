@@ -261,8 +261,10 @@ private:
     /// handles a request to stop the server
     void handle_stop_request(void);
     
-    /// listens for a new connection
+    /// listens for new connections on all endpoints
     void listen(void);
+    /// listens for a new connection on a specific endpoint
+    void listen_on(boost::asio::ip::tcp::endpoint ep);
 
     /**
      * handles new connections (checks if there was an accept error)
