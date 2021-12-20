@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
-    <nuget_build_subfolder Condition="'$(UseDebugLibraries)'=='false'"></nuget_build_subfolder>
+    <nuget_build_subfolder Condition="'$(UseDebugLibraries)'=='false'">
+    </nuget_build_subfolder>
     <nuget_build_subfolder Condition="'$(UseDebugLibraries)'=='true'">debug\</nuget_build_subfolder>
     <LIB_ROOT>C:\projects\firedaemon\3rd-party\vcpkg-fdfusion-export-vc$(PlatformToolsetVersion).1.0.0\installed\$(PlatformTarget)-windows-vc$(PlatformToolsetVersion)-md</LIB_ROOT>
-    <BOOST_INC>C:\projects\firedaemon\3rd-party\boost_1_74_0_b1</BOOST_INC>
-    <BOOST_LIB>C:\projects\firedaemon\3rd-party\boost_1_74_0_b1\stage\winvista-support\x86\lib</BOOST_LIB>
+    <BOOST_INC>C:\projects\firedaemon\3rd-party\boost_1_78_0</BOOST_INC>
+    <BOOST_LIB>C:\projects\firedaemon\3rd-party\boost_1_78_0\stage\winvista-support\x86\lib</BOOST_LIB>
     <BZIP2_INC>$(LIB_ROOT)\bzip2-1.0.6\include</BZIP2_INC>
     <BZIP2_LIB>$(LIB_ROOT)\bzip2-1.0.6\lib</BZIP2_LIB>
     <ICONV_INC>$(LIB_ROOT)\iconv-1.9.2\include</ICONV_INC>
