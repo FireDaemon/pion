@@ -15,28 +15,14 @@
 
 #if defined(PION_USE_LOG4CXX)
 
-    // unfortunately, the current version of log4cxx has many problems that
-    // produce very annoying warnings
-
     // log4cxx headers
     #include <log4cxx/logger.h>
     #include <log4cxx/logmanager.h>
-#ifdef _MSC_VER
-    #pragma warning(push)
-    #pragma warning(disable: 4231) // nonstandard extension used : 'extern' before template explicit instantiation
-#endif
     #include <log4cxx/basicconfigurator.h>
     #include <log4cxx/propertyconfigurator.h>
-#ifdef _MSC_VER
-    #pragma warning(pop)
-#endif
 
     #if defined _MSC_VER
-        #if defined _DEBUG
-            #pragma comment(lib, "log4cxxd")
-        #else
-            #pragma comment(lib, "log4cxx")
-        #endif
+        #pragma comment(lib, "log4cxx")
         #pragma comment(lib, "odbc32")
     #endif
 
