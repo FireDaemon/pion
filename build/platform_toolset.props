@@ -3,8 +3,14 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="Configuration">
     <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <ItemDefinitionGroup />
-  <PropertyGroup />
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('Release'))" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
   <ItemGroup />
 </Project>
