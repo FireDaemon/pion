@@ -10,8 +10,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalOptions>/GL %(AdditionalOptions)</AdditionalOptions>
-      <PreprocessorDefinitions>BOOST_ALL_DYN_LINK;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;BOOST_ALL_DYN_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>

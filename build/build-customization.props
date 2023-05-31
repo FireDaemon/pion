@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ImportGroup Label="PropertySheets" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="HybridCRT.props" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros">
     <WinApiSubfolder>win7-support\</WinApiSubfolder>
   </PropertyGroup>
@@ -8,6 +10,8 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;_WIN32_WINNT=0x0601;PION_USE_WINAPI_VERSION=_WIN32_WINNT;BOOST_USE_WINAPI_VERSION=BOOST_WINAPI_VERSION_WIN7;BOOST_USE_NTDDI_VERSION=BOOST_WINAPI_NTDDI_WIN7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zc:throwingNew %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>

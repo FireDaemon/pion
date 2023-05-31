@@ -6,8 +6,6 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(PION_NET_HOME)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalOptions>/Zc:throwingNew %(AdditionalOptions)</AdditionalOptions> 
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>
