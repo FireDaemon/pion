@@ -147,7 +147,7 @@ std::string process::generate_dumpfile_name()
     boost::filesystem::path p(boost::filesystem::system_complete(cfg.dumpfile_dir));
 
     p /= ss.str();
-    p.normalize();
+    p.lexically_normal();
     p.make_preferred();
 
 # if defined(BOOST_FILESYSTEM_VERSION) && BOOST_FILESYSTEM_VERSION >= 3

@@ -54,7 +54,7 @@ void FileService::set_option(const std::string& name, const std::string& value)
 {
     if (name == "directory") {
         m_directory = value;
-        m_directory.normalize();
+        m_directory.lexically_normal();
         plugin::check_cygwin_path(m_directory, value);
         // make sure that the directory exists
         if (! boost::filesystem::exists(m_directory) || ! boost::filesystem::is_directory(m_directory)) {
@@ -148,7 +148,7 @@ void FileService::operator()(const http::request_ptr& http_request_ptr, const tc
     }
 
     // make sure that the requested file is within the configured directory
-    file_path.normalize();
+    file_path.lexically_normal();
 # if defined(BOOST_FILESYSTEM_VERSION) && BOOST_FILESYSTEM_VERSION >= 3
     std::string file_string = file_path.string();
     if (file_string.find(m_directory.string()) != 0) {
@@ -450,7 +450,7 @@ void FileService::operator()(const http::request_ptr& http_request_ptr, const tc
                 } else {
                     // The file doesn't exist yet, so it will be created below, unless the
                     // directory of the requested file also doesn't exist.
-                    if (!boost::filesystem::exists(file_path.branch_path())) {
+                    if (!boost::filesystem::exists(file_path.parent_path())) {
                         static const std::string NOT_FOUND_HTML_START =
                             "<html><head>\n"
                             "<title>404 Not Found</title>\n"
