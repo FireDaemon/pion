@@ -4,7 +4,7 @@
     <VCPKG_CONFIG_SUBDIR Condition="'$(UseDebugLibraries)'!='true'">
     </VCPKG_CONFIG_SUBDIR>
     <VCPKG_CONFIG_SUBDIR Condition="'$(UseDebugLibraries)'=='true'">debug\</VCPKG_CONFIG_SUBDIR>
-    <LIB_ROOT>C:\projects\firedaemon\3rd-party\vcpkg-fdfusion-export-vc$(PlatformToolsetVersion).1.0.6\installed\$(PlatformTarget)-windows-vc$(PlatformToolsetVersion)-hybridcrt</LIB_ROOT>
+    <LIB_ROOT>C:\projects\firedaemon\3rd-party\vcpkg-fdfusion-export-vc$(PlatformToolsetVersion).1.0.7\installed\$(PlatformTarget)-windows-vc$(PlatformToolsetVersion)-hybridcrt</LIB_ROOT>
     <BOOST_INC>C:\projects\firedaemon\3rd-party\boost_1_82_0</BOOST_INC>
     <BOOST_LIB>C:\projects\firedaemon\3rd-party\boost_1_82_0\stage\$(WinApiSubfolder)x64\lib</BOOST_LIB>
     <BZIP2_INC>$(LIB_ROOT)\bzip2-1.0.6\include</BZIP2_INC>
