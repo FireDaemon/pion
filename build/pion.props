@@ -16,6 +16,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4267;4311;4312;4250;4251;4275;4503;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <TreatSpecificWarningsAsErrors>5038</TreatSpecificWarningsAsErrors>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
