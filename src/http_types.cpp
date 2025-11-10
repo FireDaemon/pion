@@ -83,18 +83,19 @@ const std::string   types::REQUEST_METHOD_POST("POST");
 const std::string   types::REQUEST_METHOD_DELETE("DELETE");
 
 // common HTTP response messages
+const std::string   types::RESPONSE_MESSAGE_CONTINUE("Continue");
 const std::string   types::RESPONSE_MESSAGE_OK("OK");
 const std::string   types::RESPONSE_MESSAGE_CREATED("Created");
 const std::string   types::RESPONSE_MESSAGE_ACCEPTED("Accepted");
 const std::string   types::RESPONSE_MESSAGE_NO_CONTENT("No Content");
 const std::string   types::RESPONSE_MESSAGE_FOUND("Found");
+const std::string   types::RESPONSE_MESSAGE_NOT_MODIFIED("Not Modified");
 const std::string   types::RESPONSE_MESSAGE_PERMANENT_REDIRECT("Permanent Redirect");
+const std::string   types::RESPONSE_MESSAGE_BAD_REQUEST("Bad Request");
 const std::string   types::RESPONSE_MESSAGE_UNAUTHORIZED("Unauthorized");
 const std::string   types::RESPONSE_MESSAGE_FORBIDDEN("Forbidden");
 const std::string   types::RESPONSE_MESSAGE_NOT_FOUND("Not Found");
 const std::string   types::RESPONSE_MESSAGE_METHOD_NOT_ALLOWED("Method Not Allowed");
-const std::string   types::RESPONSE_MESSAGE_NOT_MODIFIED("Not Modified");
-const std::string   types::RESPONSE_MESSAGE_BAD_REQUEST("Bad Request");
 const std::string   types::RESPONSE_MESSAGE_CONFLICT("Conflict");
 const std::string   types::RESPONSE_MESSAGE_PRECONDITION_FAILED("Precondition Failed");
 const std::string   types::RESPONSE_MESSAGE_UNSUPPORTED_MEDIA_TYPE("Unsupported Media Type");
@@ -102,29 +103,6 @@ const std::string   types::RESPONSE_MESSAGE_UNPROCESSABLE_ENTITY("Unprocessable 
 const std::string   types::RESPONSE_MESSAGE_UPGRADE_REQUIRED("Upgrade Required");
 const std::string   types::RESPONSE_MESSAGE_SERVER_ERROR("Server Error");
 const std::string   types::RESPONSE_MESSAGE_NOT_IMPLEMENTED("Not Implemented");
-const std::string   types::RESPONSE_MESSAGE_CONTINUE("Continue");
-
-// common HTTP response codes
-const unsigned int  types::RESPONSE_CODE_OK = 200;
-const unsigned int  types::RESPONSE_CODE_CREATED = 201;
-const unsigned int  types::RESPONSE_CODE_ACCEPTED = 202;
-const unsigned int  types::RESPONSE_CODE_NO_CONTENT = 204;
-const unsigned int  types::RESPONSE_CODE_FOUND = 302;
-const unsigned int  types::RESPONSE_CODE_PERMANENT_REDIRECT = 308;
-const unsigned int  types::RESPONSE_CODE_UNAUTHORIZED = 401;
-const unsigned int  types::RESPONSE_CODE_FORBIDDEN = 403;
-const unsigned int  types::RESPONSE_CODE_NOT_FOUND = 404;
-const unsigned int  types::RESPONSE_CODE_METHOD_NOT_ALLOWED = 405;
-const unsigned int  types::RESPONSE_CODE_NOT_MODIFIED = 304;
-const unsigned int  types::RESPONSE_CODE_BAD_REQUEST = 400;
-const unsigned int  types::RESPONSE_CODE_CONFLICT = 409;
-const unsigned int  types::RESPONSE_CODE_PRECONDITION_FAILED = 412;
-const unsigned int  types::RESPONSE_CODE_UNSUPPORTED_MEDIA_TYPE = 415;
-const unsigned int  types::RESPONSE_CODE_UNPROCESSABLE_ENTITY = 422;
-const unsigned int  types::RESPONSE_CODE_UPGRADE_REQUIRED = 426;
-const unsigned int  types::RESPONSE_CODE_SERVER_ERROR = 500;
-const unsigned int  types::RESPONSE_CODE_NOT_IMPLEMENTED = 501;
-const unsigned int  types::RESPONSE_CODE_CONTINUE = 100;
 
 
 // static member functions

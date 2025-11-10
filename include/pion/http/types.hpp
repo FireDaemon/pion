@@ -91,18 +91,19 @@ struct PION_API types
     static const std::string    REQUEST_METHOD_DELETE;
     
     // common HTTP response messages
+    static const std::string    RESPONSE_MESSAGE_CONTINUE;
     static const std::string    RESPONSE_MESSAGE_OK;
     static const std::string    RESPONSE_MESSAGE_CREATED;
     static const std::string    RESPONSE_MESSAGE_ACCEPTED;
     static const std::string    RESPONSE_MESSAGE_NO_CONTENT;
     static const std::string    RESPONSE_MESSAGE_FOUND;
+    static const std::string    RESPONSE_MESSAGE_NOT_MODIFIED;
     static const std::string    RESPONSE_MESSAGE_PERMANENT_REDIRECT;
+    static const std::string    RESPONSE_MESSAGE_BAD_REQUEST;
     static const std::string    RESPONSE_MESSAGE_UNAUTHORIZED;
     static const std::string    RESPONSE_MESSAGE_FORBIDDEN;
     static const std::string    RESPONSE_MESSAGE_NOT_FOUND;
     static const std::string    RESPONSE_MESSAGE_METHOD_NOT_ALLOWED;
-    static const std::string    RESPONSE_MESSAGE_NOT_MODIFIED;
-    static const std::string    RESPONSE_MESSAGE_BAD_REQUEST;
     static const std::string    RESPONSE_MESSAGE_CONFLICT;
     static const std::string    RESPONSE_MESSAGE_PRECONDITION_FAILED;
     static const std::string    RESPONSE_MESSAGE_UNSUPPORTED_MEDIA_TYPE;
@@ -110,29 +111,28 @@ struct PION_API types
     static const std::string    RESPONSE_MESSAGE_UPGRADE_REQUIRED;
     static const std::string    RESPONSE_MESSAGE_SERVER_ERROR;
     static const std::string    RESPONSE_MESSAGE_NOT_IMPLEMENTED;
-    static const std::string    RESPONSE_MESSAGE_CONTINUE;
 
     // common HTTP response codes
-    static const unsigned int   RESPONSE_CODE_OK;
-    static const unsigned int   RESPONSE_CODE_CREATED;
-    static const unsigned int   RESPONSE_CODE_ACCEPTED;
-    static const unsigned int   RESPONSE_CODE_NO_CONTENT;
-    static const unsigned int   RESPONSE_CODE_FOUND;
-    static const unsigned int   RESPONSE_CODE_PERMANENT_REDIRECT;
-    static const unsigned int   RESPONSE_CODE_UNAUTHORIZED;
-    static const unsigned int   RESPONSE_CODE_FORBIDDEN;
-    static const unsigned int   RESPONSE_CODE_NOT_FOUND;
-    static const unsigned int   RESPONSE_CODE_METHOD_NOT_ALLOWED;
-    static const unsigned int   RESPONSE_CODE_NOT_MODIFIED;
-    static const unsigned int   RESPONSE_CODE_BAD_REQUEST;
-    static const unsigned int   RESPONSE_CODE_CONFLICT;
-    static const unsigned int   RESPONSE_CODE_PRECONDITION_FAILED;
-    static const unsigned int   RESPONSE_CODE_UNSUPPORTED_MEDIA_TYPE;
-    static const unsigned int   RESPONSE_CODE_UNPROCESSABLE_ENTITY;
-    static const unsigned int   RESPONSE_CODE_UPGRADE_REQUIRED;
-    static const unsigned int   RESPONSE_CODE_SERVER_ERROR;
-    static const unsigned int   RESPONSE_CODE_NOT_IMPLEMENTED;
-    static const unsigned int   RESPONSE_CODE_CONTINUE;
+    static constexpr unsigned int   RESPONSE_CODE_CONTINUE = 100;
+    static constexpr unsigned int   RESPONSE_CODE_OK = 200;
+    static constexpr unsigned int   RESPONSE_CODE_CREATED = 201;
+    static constexpr unsigned int   RESPONSE_CODE_ACCEPTED = 202;
+    static constexpr unsigned int   RESPONSE_CODE_NO_CONTENT = 204;
+    static constexpr unsigned int   RESPONSE_CODE_FOUND = 302;
+    static constexpr unsigned int   RESPONSE_CODE_NOT_MODIFIED = 304;
+    static constexpr unsigned int   RESPONSE_CODE_PERMANENT_REDIRECT = 308;
+    static constexpr unsigned int   RESPONSE_CODE_BAD_REQUEST = 400;
+    static constexpr unsigned int   RESPONSE_CODE_UNAUTHORIZED = 401;
+    static constexpr unsigned int   RESPONSE_CODE_FORBIDDEN = 403;
+    static constexpr unsigned int   RESPONSE_CODE_NOT_FOUND = 404;
+    static constexpr unsigned int   RESPONSE_CODE_METHOD_NOT_ALLOWED = 405;
+    static constexpr unsigned int   RESPONSE_CODE_CONFLICT = 409;
+    static constexpr unsigned int   RESPONSE_CODE_PRECONDITION_FAILED = 412;
+    static constexpr unsigned int   RESPONSE_CODE_UNSUPPORTED_MEDIA_TYPE = 415;
+    static constexpr unsigned int   RESPONSE_CODE_UNPROCESSABLE_ENTITY = 422;
+    static constexpr unsigned int   RESPONSE_CODE_UPGRADE_REQUIRED = 426;
+    static constexpr unsigned int   RESPONSE_CODE_SERVER_ERROR = 500;
+    static constexpr unsigned int   RESPONSE_CODE_NOT_IMPLEMENTED = 501;
     
 
     /// converts time_t format into an HTTP-date string
