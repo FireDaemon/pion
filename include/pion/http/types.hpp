@@ -60,6 +60,9 @@ struct PION_API types
     static const std::string    HEADER_ORIGIN;
     static const std::string    HEADER_ACCEPT;
     static const std::string    HEADER_ALLOW;
+    static const std::string    HEADER_VARY;
+    static const std::string    HEADER_UPGRADE;
+    static const std::string    HEADER_UPGRADE_INSECURE_REQUESTS;
     static const std::string    HEADER_CORS_ALLOW_ORIGIN;
     static const std::string    HEADER_CORS_ALLOW_CREDENTIALS;
     static const std::string    HEADER_CORS_ALLOW_METHODS;
@@ -93,6 +96,7 @@ struct PION_API types
     static const std::string    RESPONSE_MESSAGE_ACCEPTED;
     static const std::string    RESPONSE_MESSAGE_NO_CONTENT;
     static const std::string    RESPONSE_MESSAGE_FOUND;
+    static const std::string    RESPONSE_MESSAGE_PERMANENT_REDIRECT;
     static const std::string    RESPONSE_MESSAGE_UNAUTHORIZED;
     static const std::string    RESPONSE_MESSAGE_FORBIDDEN;
     static const std::string    RESPONSE_MESSAGE_NOT_FOUND;
@@ -114,6 +118,7 @@ struct PION_API types
     static const unsigned int   RESPONSE_CODE_ACCEPTED;
     static const unsigned int   RESPONSE_CODE_NO_CONTENT;
     static const unsigned int   RESPONSE_CODE_FOUND;
+    static const unsigned int   RESPONSE_CODE_PERMANENT_REDIRECT;
     static const unsigned int   RESPONSE_CODE_UNAUTHORIZED;
     static const unsigned int   RESPONSE_CODE_FORBIDDEN;
     static const unsigned int   RESPONSE_CODE_NOT_FOUND;
