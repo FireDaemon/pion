@@ -109,7 +109,7 @@ public:
         boost::filesystem::remove_all("sandbox");
     }
     
-    inline boost::asio::io_service& get_executor(void) { return m_scheduler.get_executor(); }
+    inline boost::asio::io_context& get_executor(void) { return m_scheduler.get_executor(); }
     
     single_service_scheduler	m_scheduler;
 	http::plugin_server			m_server;

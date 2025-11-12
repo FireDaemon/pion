@@ -96,7 +96,7 @@ public:
      * @param my_timer deadline timer used to keep the IO service active while running
      */
     void keep_running(boost::asio::io_context& my_service,
-                     boost::asio::deadline_timer& my_timer);
+                     boost::asio::system_timer& my_timer);
     
     /**
      * puts the current thread to sleep for a specific period of time
@@ -161,13 +161,13 @@ protected:
     static const boost::uint32_t    DEFAULT_NUM_THREADS;
 
     /// number of nanoseconds in one full second (10 ^ 9)
-    static const boost::uint32_t    NSEC_IN_SECOND;
+    static constexpr boost::uint32_t    NSEC_IN_SECOND = 1000000000;
 
     /// number of microseconds in one full second (10 ^ 6)
-    static const boost::uint32_t    MICROSEC_IN_SECOND;
+    static constexpr boost::uint32_t    MICROSEC_IN_SECOND = 1000000;
     
     /// number of seconds a timer should wait for to keep the IO services running
-    static const boost::uint32_t    KEEP_RUNNING_TIMER_SECONDS;
+    static constexpr boost::uint32_t    KEEP_RUNNING_TIMER_SECONDS = 5;
 
 
     /// mutex to make class thread-safe
@@ -269,14 +269,14 @@ protected:
     virtual void stop_services(void) { m_service.stop(); }
     
     /// finishes all services used to schedule work
-    virtual void finish_services(void) { m_service.reset(); }
+    virtual void finish_services(void) { m_service.restart(); }
 
     
     /// service used to manage async I/O events
     boost::asio::io_context         m_service;
     
     /// timer used to periodically check for shutdown
-    boost::asio::deadline_timer     m_timer;
+    boost::asio::system_timer       m_timer;
 };
     
 
@@ -341,8 +341,8 @@ protected:
     /// typedef for a pair object where first is an IO service and second is a deadline timer
     struct service_pair_type {
         service_pair_type(void) : first(), second(first) {}
-        boost::asio::io_context         first;
-        boost::asio::deadline_timer     second;
+        boost::asio::io_context     first;
+        boost::asio::system_timer   second;
     };
     
     /// typedef for a pool of IO services

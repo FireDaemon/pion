@@ -308,7 +308,7 @@ public:
         m_sync_server_ptr->stop();
     }
     inline boost::shared_ptr<MockSyncServer>& getServerPtr(void) { return m_sync_server_ptr; }
-    inline boost::asio::io_service& get_executor(void) { return m_scheduler.get_executor(); }
+    inline boost::asio::io_context& get_executor(void) { return m_scheduler.get_executor(); }
 
 private:
     single_service_scheduler          m_scheduler;

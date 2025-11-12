@@ -167,9 +167,9 @@ std::size_t message::write(std::ostream& out,
 
     // write message to the output stream
     std::size_t bytes_out = 0;
-    for (write_buffers_t::const_iterator i=write_buffers.begin(); i!=write_buffers.end(); ++i) {
-        const char *ptr = boost::asio::buffer_cast<const char*>(*i);
-        size_t len = boost::asio::buffer_size(*i);
+    for (const auto& buffer : write_buffers) {
+        const char* ptr = static_cast<const char*>(buffer.data());
+        const size_t len = buffer.size();
         out.write(ptr, len);
         if (!out) {
           ec = make_error_code(boost::system::errc::io_error);

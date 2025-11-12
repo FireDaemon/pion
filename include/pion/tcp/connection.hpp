@@ -264,7 +264,7 @@ public:
      *
      * @see boost::asio::basic_socket_acceptor::connect()
      */
-    inline boost::system::error_code connect(boost::asio::ip::tcp::endpoint& tcp_endpoint)
+    inline boost::system::error_code connect(const boost::asio::ip::tcp::endpoint& tcp_endpoint)
     {
         boost::system::error_code ec;
         m_ssl_socket.lowest_layer().connect(tcp_endpoint, ec);
@@ -306,6 +306,19 @@ public:
 #else
         boost::asio::ip::tcp::resolver resolver(m_ssl_socket.lowest_layer().get_executor().context());
 #endif
+#if BOOST_ASIO_VERSION >= 103300
+        const auto results = resolver.resolve(remote_server,
+            boost::lexical_cast<std::string>(remote_port), boost::asio::ip::tcp::resolver::numeric_service,
+            ec);
+        for (const boost::asio::ip::tcp::endpoint ep : results) {
+            if (ec = connect(ep)) {
+                close();
+            }
+            else {
+                break;
+			}
+        }
+#else
         boost::asio::ip::tcp::resolver::query query(remote_server,
             boost::lexical_cast<std::string>(remote_port),
             boost::asio::ip::tcp::resolver::query::numeric_service);
@@ -323,6 +336,7 @@ public:
             if (ec)
                 close();
         }
+#endif
 
         return ec;
     }
